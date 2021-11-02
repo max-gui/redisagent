@@ -1,6 +1,6 @@
 package redisops
 
-func StartupInit(url, pwd string) {
-	Url = url
-	Pwd = pwd
+func StartupInit(redisurl, redispwd string) {
+	url = url
+	pwd = pwd
 }

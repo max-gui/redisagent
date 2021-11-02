@@ -14,7 +14,7 @@ func Pool() *redis.Pool {
 			MaxIdle:     3,
 			IdleTimeout: 240 * time.Second,
 			// Dial or DialContext must be set. When both are set, DialContext takes precedence over Dial.
-			Dial: func() (redis.Conn, error) { return redis.Dial("tcp", Url, redis.DialPassword(Pwd)) },
+			Dial: func() (redis.Conn, error) { return redis.Dial("tcp", url, redis.DialPassword(pwd)) },
 		}
 	})
 
@@ -24,7 +24,7 @@ func Pool() *redis.Pool {
 var (
 	pool     *redis.Pool
 	once     sync.Once
-	Url, Pwd string
+	url, pwd string
 	// redisServer *string
 )
 
